@@ -1,6 +1,5 @@
 package myItems.servlet;
 
-import com.google.protobuf.TextFormat;
 import myItems.manager.ItemManager;
 import myItems.model.Item;
 import myItems.model.User;
@@ -33,12 +32,12 @@ public class AddItem extends HttpServlet {
         int categoryId = Integer.parseInt(req.getParameter("category_id"));
 
 
-       Item item = Item.builder()
-               .title(title)
-               .price(price)
-               .categoryId(categoryId)
-               .userId(user.getId())
-               .build();
+        Item item = Item.builder()
+                .title(title)
+                .price(price)
+                .categoryId(categoryId)
+                .userId(user.getId())
+                .build();
         for (Part part : req.getParts()) {
             if (getFileName(part) != null) {
                 String fileName = System.currentTimeMillis() + getFileName(part);
@@ -50,6 +49,7 @@ public class AddItem extends HttpServlet {
         itemManager.addItem(item);
         resp.sendRedirect("/userHome");
     }
+
     private String getFileName(Part part) {
         for (String content : part.getHeader("content-disposition").split(";")) {
             if (content.trim().startsWith("filename"))

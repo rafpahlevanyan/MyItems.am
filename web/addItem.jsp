@@ -17,16 +17,17 @@
     <p>Add Item</p>
     <form action="/addItem" method="post" enctype="multipart/form-data">
         <input type="text" name="title" placeholder="title"><br>
-        <input type="text" name="price" placeholder="price"><br>
-            <select name="category_id">
-                <%
-                    CategoryManager categoryManager = new CategoryManager();
-                    List<Category> allCategories = categoryManager.getAllCategories();
-                %>
-                <%for (Category category : allCategories) {%> pti xrges jsp or ejy bacvi lra hmi te inchqan kjoxcnes ed arden qu cankutyunn e gin tas, valyuta tas, inch uzes kras enes jogi
+        <input type="number" name="price" placeholder="price"><br>
+        <select name="category_id">
+            <%
+                CategoryManager categoryManager = new CategoryManager();
+                List<Category> allCategories = categoryManager.getAllCategories();
+            %>
+            <%for (Category category : allCategories) {%>
 
-                <option value="<%=category.getId()%>"><%=category.getName()%></option>
-                <%}%>
+            <option value="<%=category.getId()%>"><%=category.getName()%>
+            </option>
+            <%}%>
         </select><br>
         <input type="file" name="image"><br>
         <input type="submit" value="Add Item">

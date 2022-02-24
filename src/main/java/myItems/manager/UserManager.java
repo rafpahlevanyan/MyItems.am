@@ -32,7 +32,7 @@ public class UserManager {
         }
     }
 
-    public User getUserFromResultSet(ResultSet resultSet) { //ushadir exi ,syo?ha axpers
+    public User getUserFromResultSet(ResultSet resultSet) {
         try {
             return User.builder()
                     .id(resultSet.getInt(1))
@@ -54,7 +54,7 @@ public class UserManager {
             ps.setString(1, email);
             ps.setString(2, password);
             ResultSet resultSet = ps.executeQuery();
-            if(resultSet.next()){
+            if (resultSet.next()) {
                 return getUserFromResultSet(resultSet);
             }
         } catch (SQLException e) {

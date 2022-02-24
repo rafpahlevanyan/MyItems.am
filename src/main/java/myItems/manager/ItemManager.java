@@ -1,7 +1,6 @@
 package myItems.manager;
 
 import myItems.db.DBConnectionProvider;
-import myItems.model.Category;
 import myItems.model.Item;
 
 import java.sql.*;
@@ -67,14 +66,14 @@ public class ItemManager {
     }
 
 
-    public List<Item> getAllItemsByUser(int userId){
+    public List<Item> getAllItemsByUser(int userId) {
         List<Item> items = new ArrayList<>();
         String sql = "SELECT * FROM item WHERE user_id = ?";
         try {
             PreparedStatement ps = connection.prepareStatement(sql);
-            ps.setInt(1,userId);
+            ps.setInt(1, userId);
             ResultSet rs = ps.executeQuery();
-            while (rs.next()){
+            while (rs.next()) {
                 items.add(getItemFromResultSet(rs));
             }
         } catch (SQLException e) {
@@ -83,12 +82,12 @@ public class ItemManager {
         return items;
     }
 
-    public boolean deleteItem(int id){
+    public boolean deleteItem(int id) {
         String sql = "DELETE FREE item WHERE id = ?";
 
         try {
             PreparedStatement ps = connection.prepareStatement(sql);
-            ps.setInt(1,id);
+            ps.setInt(1, id);
             ps.executeUpdate();
             return true;
         } catch (SQLException e) {
@@ -97,15 +96,15 @@ public class ItemManager {
         return false;
     }
 
-    public List<Item> getByCategoryId(int id){
-            List<Item> items = new ArrayList<>();
+    public List<Item> getByCategoryId(int id) {
+        List<Item> items = new ArrayList<>();
         String sql = "SELECT * FROM item WHERE category_id = ?";
         try {
             PreparedStatement ps = connection.prepareStatement(sql);
-            ps.setInt(1,id);
+            ps.setInt(1, id);
             ResultSet rs = ps.executeQuery();
-            while (rs.next()){
-                 items.add(getItemFromResultSet(rs));
+            while (rs.next()) {
+                items.add(getItemFromResultSet(rs));
             }
         } catch (SQLException e) {
             e.printStackTrace();

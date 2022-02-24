@@ -2,7 +2,6 @@ package myItems.servlet;
 
 import myItems.manager.CategoryManager;
 import myItems.manager.ItemManager;
-import myItems.model.Category;
 import myItems.model.Item;
 import myItems.model.User;
 

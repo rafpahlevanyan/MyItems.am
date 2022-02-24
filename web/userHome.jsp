@@ -62,7 +62,7 @@ Welcome <%=user.getName()%>
                 </td>
                 <td><%=item.getPrice()%>
                 </td>
-                <% if (item.getPicUrl()!=null){%>
+                <% if (item.getPicUrl() != null) {%>
                 <td><img src="/image?path=<%=item.getPicUrl()%>" style="width: 100px"><%}%>
                 </td>
             </tr>

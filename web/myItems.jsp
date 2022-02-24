@@ -16,7 +16,6 @@
 
 <%
     List<Item> items = (List<Item>) request.getAttribute("items");
-    User user = (User) session.getAttribute("user");
 %>
 <div class="header" style="margin-left: 100px;margin-bottom: 10px">
     <a href="/userHome" style="font-size: 25px">
@@ -25,27 +24,26 @@
     </a>
 </div>
 
-    <p>My Items</p>
-    <table border="1">
-        <tr>
-            <th>Title</th>
-            <th>Price</th>
-            <th>Image</th>
-        </tr>
+<p>My Items</p>
+<table border="1">
+    <tr>
+        <th>Title</th>
+        <th>Price</th>
+        <th>Image</th>
+    </tr>
 
-        <%
-            for (Item item : items) {%>
-        <tr>
-            <td><%=item.getTitle()%>
-            </td>
-            <td><%=item.getPrice()%>
-            </td>
-            <td><%=item.getPicUrl()%>
-            </td>
-        </tr>
-        <%}%>
-    </table>
-
+    <%
+        for (Item item : items) {%>
+    <tr>
+        <td><%=item.getTitle()%>
+        </td>
+        <td><%=item.getPrice()%>
+        </td>
+        <td><%=item.getPicUrl()%>
+        </td>
+    </tr>
+    <%}%>
+</table>
 
 
 </body>

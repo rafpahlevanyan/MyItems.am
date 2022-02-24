@@ -18,9 +18,8 @@ public class FirstPageServlet extends HttpServlet {
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         List<Item> last20Items = itemManager.getLast20Items();
-        req.setAttribute("items",last20Items);
-        req.getRequestDispatcher("/first.jsp").forward(req,resp);
-
+        req.setAttribute("items", last20Items);
+        req.getRequestDispatcher("/first.jsp").forward(req, resp);
 
 
     }

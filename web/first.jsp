@@ -29,8 +29,8 @@
 
     <div class="header" style="margin-left: 100px;margin-bottom: 10px">
         <a href="/" style="font-size: 25px">
-        <span style="color: red">My </span><span style="color: blue;">Ite</span><span
-            style="color: orange">ms</span>
+            <span style="color: red">My </span><span style="color: blue;">Ite</span><span
+                style="color: orange">ms</span>
         </a>
     </div>
     <div>
@@ -41,7 +41,8 @@
         <form action="/showItems">
             <select name="catId">
                     <%for (Category category : allCategories) {%>
-                <option value="<%=category.getId()%>"><%=category.getName()%></option>
+                <option value="<%=category.getId()%>"><%=category.getName()%>
+                </option>
                     <%}%>
 
                 <input type="submit" value="Search">
@@ -75,14 +76,14 @@
     </div>
 
 
-<div class="log" style="padding-left: 200px">
-    <div class="login">
-        <a href="/login.jsp" style="border: 1px solid">Login</a>
+    <div class="log" style="padding-left: 200px">
+        <div class="login">
+            <a href="/login.jsp" style="border: 1px solid">Login</a>
+        </div>
+        <div class="register">
+            <a href="/register.jsp">Register</a>
+        </div>
     </div>
-    <div class="register">
-        <a href="/register.jsp">Register</a>
-    </div>
-</div>
 
 </div>
 </body>

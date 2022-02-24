@@ -13,7 +13,7 @@ import java.util.List;
 public class CategoryManager {
     Connection connection = DBConnectionProvider.getInstance().getConnection();
 
-    public List<Category> getAllCategories() { //es er?logini vaxt error kqce mti
+    public List<Category> getAllCategories() {
         List<Category> categories = new ArrayList<>();
         String sql = "SELECT * FROM category";
         try {

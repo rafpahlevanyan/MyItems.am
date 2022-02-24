@@ -15,7 +15,7 @@ import java.io.IOException;
 public class LoginServlet extends HttpServlet {
 
 
-    private UserManager userManager= new UserManager();
+    private UserManager userManager = new UserManager();
 
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -23,13 +23,13 @@ public class LoginServlet extends HttpServlet {
         String password = req.getParameter("password");
         HttpSession session = req.getSession();
 
-        User user = userManager.getByEmailAndPassword(email,password);
+        User user = userManager.getByEmailAndPassword(email, password);
 
-        if (user == null){
+        if (user == null) {
             resp.sendRedirect("/");
 
-        }else {
-            session.setAttribute("user",user);
+        } else {
+            session.setAttribute("user", user);
             resp.sendRedirect("/userHome");
         }
 
